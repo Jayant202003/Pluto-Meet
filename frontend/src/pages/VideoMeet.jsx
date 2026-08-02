@@ -68,7 +68,7 @@ export default function VideoMeetComponent() {
         console.log("HELLO")
         getPermissions();
 
-    })
+    }, [])
 
     let getDislayMedia = () => {
         if (screen) {
@@ -274,6 +274,10 @@ export default function VideoMeetComponent() {
 
 
     let connectToSocketServer = () => {
+         if (socketRef.current) {
+            console.log("Socket already connected, skipping duplicate connection");
+            return;
+        }
         socketRef.current = io.connect(server_url, { secure: false })
 
         socketRef.current.on('signal', gotMessageFromServer)
@@ -441,6 +445,7 @@ export default function VideoMeetComponent() {
 
     
     let connect = () => {
+        if (askForUsername === false) return;
         setAskForUsername(false);
         getMedia();
     }
