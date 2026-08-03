@@ -520,8 +520,9 @@ export default function VideoMeetComponent() {
                                 {screen === true ? <ScreenShareIcon /> : <StopScreenShareIcon />}
                             </IconButton> : <></>}
 
-                        <Badge badgeContent={newMessages} max={999} color='orange'>
-                            <IconButton onClick={() => setModal(!showModal)} style={{ color: "white" }}>
+            
+                        <Badge badgeContent={newMessages || 0} max={999} color='orange'>
+                            <IconButton onClick={() => showModal ? closeChat() : openChat()} style={{ color: "white" }}>
                                 <ChatIcon />                        </IconButton>
                         </Badge>
 
