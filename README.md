@@ -2,6 +2,15 @@
 
 A full stack video conferencing web application built with React, Node.js, Express, Socket.io, and MongoDB. Supports real-time video/audio calls, screen sharing, in-call chat, and meeting history.
 
+---
+
+## 🌐 Live Demo
+
+🔗 **https://pluto-meet.onrender.com**
+
+---
+
+
 ## Features
 
 - Real-time video and audio calls using WebRTC
